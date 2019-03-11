@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <link href="css/style.css" rel="stylesheet" >
+
+    <title>EasyDriving</title>
+
+  </head>
+  <body>
+
+    <!-- jQuery first, then Popper.js-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">EasyDriving</a>
+
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="index.html">Logout</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="user_dashboard.html">
+                  <span data-feather="dashboard"></span>
+                  Übersicht
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="user_new.html">
+                  <span data-feather="new"></span>
+                  Auftragserstellung<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="user_profil.html">
+                  <span data-feather="profil"></span>
+                  Profil
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+            <h1 class="h2">Neuen Auftrag erstellen</h1>
+          </div>
+
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="inputReason">Leihgrund</label>
+                <textarea class="form-control" id="reason" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputDate">Abholdatum</label>
+                <input type="text" class="form-control" id="inputDate">
+              </div>
+              <div class="form-group col-md-4">
+                <label for="inputCarID">Fahrzeug</label>
+                <select id="inputCarID" class="form-control">
+                  <option selected>Auswählen</option>
+                  <option>...</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">buchen</button>
+          </form>
+
+        </main>
+      </div>
+    </div>
+
+</body>
+</html>
