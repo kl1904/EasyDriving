@@ -24,17 +24,45 @@
       <button type="submit" name="button" id="submitButton">Abschicken</button>
     </form>
     <script>function add() {
-      db.collection("autos").doc("Volvo").set ({
-        name: "hallo",
-        ps:   "120"
-      });
-      console.log("test");
+      var autosRef = db.collection("autos");
+
+      autosRef.doc("Volvo").set({
+          name: "hallo",
+          ps:   "120"});
+      autosRef.doc("Mercedes").set({
+          name: "hallo",
+          ps:   "120"});
+      autosRef.doc("BMW").set({
+          name: "hallo",
+          ps:   "120"});
+      autosRef.doc("Audi").set({
+          name: "hallo",
+          ps:   "120"});
+      autosRef.doc("Opel").set({
+          name: "hallo",
+          ps:   "120"});
     }
 
     var submitBut = document.getElementById("submitButton");
 
-    submitBut.addEventListener("click", add);
+    submitBut.addEventListener("click", add());
+    
     console.log(db.collection("autos").doc("Volvo").id);
+
+        var docRef = db.collection("autos").doc("Volvo");
+
+    docRef.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+
+
   </script>
   </body>
 </html>
