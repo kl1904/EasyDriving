@@ -1,18 +1,25 @@
+
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     console.log(window.location.href);
 
-    if (window.location.href == "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html"){
+    if (window.location.href == "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html" ||
+        window.location.href == "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html?" ){
     location.replace('user_dashboard.html');
     window.alert("Du bist angemeldet");
     }
 
+    localStorage.setItem("content", "visible");
     console.log("Du bist angemeldet");
 
   } else {
     // No user is signed in.
     console.log("Du bist abgemeldet");
+    localStorage.setItem("content", "collapse");
+    if (window.location.href !== "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html"){
+      location.replace('index.html');
+    }
   }
 });
 
