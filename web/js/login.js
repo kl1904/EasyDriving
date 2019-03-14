@@ -13,7 +13,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     console.log("Du bist abgemeldet");
 
-      location.replace('index.html');
   }
 });
 
