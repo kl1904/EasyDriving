@@ -4,10 +4,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     // User is signed in.
     console.log(window.location.href);
 
-    if (window.location.href == "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html" ||
-        window.location.href == "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html?" ){
+    if (localStorage.getItem("file"==="index.html") ){
     location.replace('user_dashboard.html');
     window.alert("Du bist angemeldet");
+    console.log(window.location);
     }
 
     localStorage.setItem("content", "visible");
@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     console.log("Du bist abgemeldet");
     localStorage.setItem("content", "collapse");
-    if (window.location.href !== "file:///C:/Users/sgeist/Desktop/DHBW/WebDB/easydriving/EasyDriving/web/index.html"){
+    if (localStorage.getItem("file" !=="index.html"){
       location.replace('index.html');
     }
   }
