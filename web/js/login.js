@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // No user is signed in.
     console.log("Du bist abgemeldet");
     localStorage.setItem("content", "collapse");
-    if (localStorage.getItem("file" !=="index.html"){
+    if (localStorage.getItem("file" !=="index.html")){
       location.replace('index.html');
     }
   }
