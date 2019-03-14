@@ -2,17 +2,17 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
+  if (!(document.getElementById("content"))) {
     location.replace('user_dashboard.html');
-    window.alert("Du bist angemeldet");
-
-    localStorage.setItem("content", "visible");
+  }
     console.log("Du bist angemeldet");
-
   } else {
     // No user is signed in.
     console.log("Du bist abgemeldet");
-
+    if ((document.getElementById("content"))) {
+      location.replace('index.html');
+      document.getElementById("content").style.visibility ="collapse";
+    }
   }
 });
 
