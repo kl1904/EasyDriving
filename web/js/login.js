@@ -16,6 +16,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+
 function login(){
 
   var userEmail = document.getElementById("id").value;
