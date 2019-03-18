@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         // Weiterleitung zum Dashboard, wenn du noch auf der Seite mit dem Loginformular bist.. (unterscheidung admin und user)
         if ((document.getElementById("loginform"))) {
           if (doc.data().role === "admin"){
-            location.replace('admin_rental_currently.html');
+            location.replace('admin_rental_overview.html');
           }else{
             location.replace('user_rental_new.html');
           }
