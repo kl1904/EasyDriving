@@ -1,27 +1,21 @@
-
-var config = {
-apiKey: "AIzaSyAMBP0QfhwnsH8RTgdosyW-yYMNCoZTyDI",
-authDomain: "easydriving-ed41c.firebaseapp.com",
-databaseURL: "https://easydriving-ed41c.firebaseio.com",
-projectId: "easydriving-ed41c",
-storageBucket: "easydriving-ed41c.appspot.com",
-messagingSenderId: "171104780631"
-};
-firebase.initializeApp(config);
-
+//user authentifikation ob der user angemeldet ist..
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    // User is signed in.
+    // Wenn der user angemeldetist mache ...
     console.log("Du bist angemeldet");
-    //Nutzer in DB anlegen ..
+
+    //Referenzvariablen..
     var db = firebase.firestore();
     var usersRef = db.collection("users");
     var docRef = db.collection("users").doc(user.uid);
 
+    //Hole Benutzerdokumente aus der Datenbank
     docRef.get().then(function(doc) {
+    //Wenn die Dokumente existieren mache..
     if (doc.exists) {
+      //Gebe Daten in der Konsole aus..
         console.log("Document data:", doc.data());
-        // Weiterleitung zum Dashboard..
+        // Weiterleitung zum Dashboard, wenn du noch auf der Seite mit dem Loginformular bist.. (unterscheidung admin und user)
         if ((document.getElementById("loginform"))) {
           if (doc.data().role === "admin"){
             location.replace('admin_rental_currently.html');
@@ -31,7 +25,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         }
 
     } else {
-        // doc.data() will be undefined in this case
+          // Wen der Nutzer keine Dokumente hat lege welche in der DB an ..
           usersRef.doc(user.uid).set({
           role: "user",
           displayName: user.displayName,
@@ -45,10 +39,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
   } else {
-    // No user is signed in.
+    // Wenn der Nutzer nicht angemeldet ist mache..
     console.log("Du bist abgemeldet");
 
-    //Wenn nicht angemeldet ist soll ins Login zurückkehren...(führs erste)
+    //Wenn nicht angemeldet ist soll ins Login zurückkehren...
     if ((document.getElementById("content"))) {
       location.replace('index.html');
     }
@@ -56,11 +50,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
+//Loginfunktion
+
 function login(){
 
   var userEmail = document.getElementById("email").value;
   var userPass = document.getElementById("password").value;
 
+//firebase funktion für das login mit errorhandling
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -71,19 +68,7 @@ function login(){
   });
 }
 
-function register(){
-
-  var userEmail = document.getElementById("email").value;
-  var userPass = document.getElementById("password").value;
-
-firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-});
-}
-
+//firebase funktion für logout..
 function logout(){
   firebase.auth().signOut();
 }
