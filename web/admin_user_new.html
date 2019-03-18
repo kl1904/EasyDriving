@@ -27,7 +27,7 @@
 
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/all.css">
 
     </head>
 
@@ -42,36 +42,36 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active"> <!-- aktiviert (auf der Seite) -->
+                <li>
                     <a href="#rental" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-key"></i>
                         Rental
                     </a>
                     <ul class="collapse list-unstyled" id="rental">
                         <li>
-                            <a href="#currently">currently</a>
+                            <a href="admin_rental_currently.html">currently</a>
                         </li>
                         <li>
-                            <a href="#open">open</a>
+                            <a href="admin_rental_open.html">open</a>
                         </li>
                     </ul>
                 </li>
-                <li>
+                <li class="active"> <!-- aktiviert (auf der Seite) -->
                     <a href="#user" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-users"></i>
                         User
                     </a>
                     <ul class="collapse list-unstyled" id="user">
                         <li>
-                            <a href="#all">all</a>
+                           <a href="admin_user_all.html">all</a>
                         </li>
-                        <li>
-                            <a href="#new">new</a>
+                        <li class="active"> <!-- aktiviert (auf der Seite) -->
+                            <a href="admin_user_new.html">new</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                <a href="#">
+                <a href="admin_carpool.html">
                     <i class="fas fa-car"></i>
                     CarPool
                 </a>
@@ -83,7 +83,6 @@
         <!-- Page Content  -->
         <div id="content">
 
-          <script src="js/checklogin.js"></script>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -99,7 +98,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto" style="text-align: right; padding-top: 10px;">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Logout</a>
+                                <a class="nav-link" href="index.html" onclick="logout()">Logout</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Einstellungen</a>
@@ -110,68 +109,101 @@
             </nav>
 
             <div class="container">
-
-            <table id="table"
-                 data-toggle="table"
-                 data-search="true"
-                 data-filter-control="true"
-                 data-click-to-select="true"
-                 data-toolbar="#toolbar">
-            <thead>
-              <tr>
-                <th data-field="state" data-checkbox="true"></th>
-          			<th data-field="prenom" data-filter-control="input" data-sortable="true">ID</th>
-          			<th data-field="date" data-filter-control="select" data-sortable="true">Fahrzeug</th>
-          			<th data-field="examen" data-filter-control="select" data-sortable="true">Abholdatum</th>
-          			<th data-field="note" data-sortable="true">Rückgabedatum</th>
-          		</tr>
-          	</thead>
-          	<tbody>
-          		<tr>
-          			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-                <td>1</td>
-                <td>Seat Mii</td>
-                <td>10/01/2018</td>
-                <td>12/01/2018</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
-                <td>2</td>
-                <td>Toyota Aygo</td>
-                <td>13/03/18</td>
-                <td>14/03/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
-                <td>3</td>
-                <td>Audi A1</td>
-                <td>05/04/18</td>
-                <td>03/09/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
-                <td>4</td>
-                <td>Elektro-Golf</td>
-                <td>07/09/18</td>
-                <td>10/10/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
-                <td>5</td>
-                <td>Audi A3</td>
-                <td>17/10/18</td>
-                <td>01/02/2018</td>
-              </tr>
-             </tbody>
-            </table>
-
-                <div id="table_icon" style="cursor: pointer;">
-                  <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                  <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                  <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                </div>
-
-            </div>
+              <form class="form-horizontal" role="form" method="POST" action="admin_user_all.html">
+                  <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-6">
+                          <h2>Register New User</h2>
+                          <hr>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 field-label-responsive">
+                          <label for="name">Name</label>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                                  <input type="text" name="name" class="form-control" id="name"
+                                         placeholder="John Doe" required autofocus>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-control-feedback">
+                                  <span class="text-danger align-middle">
+                                      <!-- Put name validation error messages here -->
+                                  </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 field-label-responsive">
+                          <label for="email">E-Mail Address</label>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                                  <input type="text" name="email" class="form-control" id="email"
+                                         placeholder="you@example.com" required autofocus>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-control-feedback">
+                                  <span class="text-danger align-middle">
+                                      <!-- Put e-mail validation error messages here -->
+                                  </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 field-label-responsive">
+                          <label for="password">Password</label>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group has-danger">
+                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                  <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                                  <input type="password" name="password" class="form-control" id="password"
+                                         placeholder="Password" required>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <div class="form-control-feedback">
+                                  <span class="text-danger align-middle">
+                                      <i class="fas fa-times"></i> Example Error Message</i>
+                                  </span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 field-label-responsive">
+                          <label for="password">Confirm Password</label>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                  <div class="input-group-addon" style="width: 2.6rem">
+                                      <i class="fa fa-redo"></i>
+                                  </div>
+                                  <input type="password" name="password-confirmation" class="form-control"
+                                         id="password-confirm" placeholder="Password" required>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-6">
+                          <button type="submit" class="btn btn-success" onclick="register()"><i class="fa fa-user-plus"></i> Register</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
 
         </div>
     </div>
@@ -200,7 +232,6 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
     <!-- Our Custom JS -->
-    <script src="js/initfirebase.js"></script>
     <script src="js/login.js"></script>
 
 

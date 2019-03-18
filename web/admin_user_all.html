@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+
     <!-- Awesome Font CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
@@ -24,15 +25,13 @@
     <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
     <link rel='stylesheet' href='http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css'>
 
+
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/admin.css">
-
-
+    <link rel="stylesheet" href="css/all.css">
 
     </head>
 
     <body>
-
 
     <div class="wrapper">
         <!-- Sidebar  -->
@@ -43,31 +42,39 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active"> <!-- aktiviert (auf der Seite) -->
+                <li>
                     <a href="#rental" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-key"></i>
                         Rental
                     </a>
                     <ul class="collapse list-unstyled" id="rental">
                         <li>
-                            <a href="#currently">Overview</a>
+                            <a href="admin_rental_currently.html">currently</a>
                         </li>
                         <li>
-                            <a href="user_new">NewOrder</a>
+                            <a href="admin_rental_open.html">open</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active"> <!-- aktiviert (auf der Seite) -->
+                    <a href="#user" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-users"></i>
+                        User
+                    </a>
+                    <ul class="collapse list-unstyled" id="user">
+                        <li class="active"> <!-- aktiviert (auf der Seite) -->
+                           <a href="admin_user_all.html">all</a>
+                        </li>
+                        <li>
+                            <a href="admin_user_new.html">new</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#Profil">
-                        <i class="fas fa-user"></i>
-                        Profil
-                    </a>
-                </li>
-                <li>
-                    <a href="#Support">
-                        <i class="fas fa-question"></i>
-                        Support
-                    </a>
+                <a href="admin_carpool.html">
+                    <i class="fas fa-car"></i>
+                    CarPool
+                </a>
                 </li>
             </ul>
 
@@ -75,8 +82,6 @@
 
         <!-- Page Content  -->
         <div id="content">
-          
-          <script src="js/checklogin.js"></script>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -94,6 +99,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html" onclick="logout()">Logout</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Einstellungen</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -101,7 +109,7 @@
 
             <div class="container">
 
-            <table id="table"
+            <table id="user_table" class="user_table"
                  data-toggle="table"
                  data-search="true"
                  data-filter-control="true"
@@ -110,57 +118,25 @@
             <thead>
               <tr>
                 <th data-field="state" data-checkbox="true"></th>
-          			<th data-field="prenom" data-filter-control="input" data-sortable="true">ID</th>
-          			<th data-field="date" data-filter-control="select" data-sortable="true">Fahrzeug</th>
-          			<th data-field="examen" data-filter-control="select" data-sortable="true">Abholdatum</th>
-          			<th data-field="note" data-sortable="true">Rückgabedatum</th>
+          			<th data-field="prenom" data-filter-control="input" data-sortable="true">UID</th>
+          			<th data-field="date" data-filter-control="select" data-sortable="true">Email</th>
+          			<th data-field="examen" data-filter-control="select" data-sortable="true">Rolle</th>
+          			<th data-field="note" data-sortable="true">photoURL</th>
           		</tr>
           	</thead>
-          	<tbody>
-          		<tr>
-          			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-                <td>1</td>
-                <td>Seat Mii</td>
-                <td>10/01/2018</td>
-                <td>12/01/2018</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
-                <td>2</td>
-                <td>Toyota Aygo</td>
-                <td>13/03/18</td>
-                <td>14/03/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
-                <td>3</td>
-                <td>Audi A1</td>
-                <td>05/04/18</td>
-                <td>03/09/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
-                <td>4</td>
-                <td>Elektro-Golf</td>
-                <td>07/09/18</td>
-                <td>10/10/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
-                <td>5</td>
-                <td>Audi A3</td>
-                <td>17/10/18</td>
-                <td>01/02/2018</td>
-              </tr>
+            <tbody>
+
              </tbody>
             </table>
+
 
                 <div id="table_icon" style="cursor: pointer;">
                   <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                   <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                   <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                 </div>
-          </div>
+
+            </div>
 
         </div>
     </div>
@@ -169,6 +145,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
     <!-- Awesome Font JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
@@ -188,8 +165,13 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
     <!-- Our Custom JS -->
-    <script src="js/initfirebase.js"></script>
+
     <script src="js/login.js"></script>
+    <script src="js/write_user_table.js"></script>
+
+    <script>
+
+    </script>
 
 </body>
 

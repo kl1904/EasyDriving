@@ -28,7 +28,7 @@
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/all.css">
 
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
@@ -53,21 +53,21 @@
                     </a>
                     <ul class="collapse list-unstyled" id="rental">
                         <li>
-                            <a href="#currently">Overview</a>
+                            <a href="user_rental_currently.html">Overview</a>
                         </li>
-                        <li>
-                            <a href="#open">NewOrder</a>
+                        <li class="active"> <!-- aktiviert (auf der Seite) -->
+                            <a href="user_rental_new.html">NewOrder</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#Profil">
+                    <a href="user_profil.html">
                         <i class="fas fa-user"></i>
                         Profil
                     </a>
                 </li>
                 <li>
-                    <a href="#Support">
+                    <a href="user_support.html">
                         <i class="fas fa-question"></i>
                         Support
                     </a>
@@ -78,8 +78,6 @@
 
         <!-- Page Content  -->
         <div id="content">
-
-          <script src="js/checklogin.js"></script>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -95,7 +93,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto" style="text-align: right; padding-top: 10px;">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Logout</a>
+                                <a class="nav-link" href="index.html" onclick="logout()">Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -144,7 +142,6 @@
                 <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
                 <!-- Our Custom JS -->
-                <script src="js/initfirebase.js"></script>
                 <script src="js/login.js"></script>
 
             </div>

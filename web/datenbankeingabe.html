@@ -47,8 +47,15 @@
 
     submitBut.addEventListener("click", add());
     
-    console.log(db.collection("autos").doc("Volvo").id);
+//Alle Dokumente in Autos
+    db.collection("autos").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+    });
+});
 
+//Nur Volvo
         var docRef = db.collection("autos").doc("Volvo");
 
     docRef.get().then(function(doc) {

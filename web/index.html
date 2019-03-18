@@ -18,13 +18,13 @@
   </head>
   <body>
 
-    <form class="form-signin">
+    <form class="form-signin" id="loginform">
 
        <div class="text-center">
          <img class="mb-4" src="img/user_icon.png" alt="User" width="150" height="150">
        </div>
        <h1 class="h3 mb-3 font-weight-normal text-center">Login</h1>
-       <input type="text" id="id" class="form-control" placeholder="MitarbeiterID.." required autofocus>
+       <input type="text" id="email" class="form-control" placeholder="MitarbeiterID.." required autofocus>
        <input type="password" id="password" class="form-control" placeholder="Password.." required>
        <div class="checkbox mb-3">
          <label>
@@ -46,7 +46,6 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
     <!-- Our Custom JS -->
-    <script src="js/initfirebase.js"></script>
     <script src="js/login.js"></script>
 
   </body>
