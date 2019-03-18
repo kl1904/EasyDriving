@@ -1,23 +1,21 @@
-usersRef.doc(user.uid).set({
-role: "user",
-displayName: user.displayName,
-email: user.email,
-eemailVerified: user.emailVerified,
-photoURL: user.photoURL,
-isAnonymous: user.isAnonymous,
-uid: user.uid});
-
 //Referenzvariablen..
 
 
 function addCar(){
 
-  var idcounter = 0;
+  var idcounter = "0";
   var db = firebase.firestore();
   var carRef = db.collection("cars");
-  var docRef = db.collection("cars").doc(idcounter);
   var marke = document.getElementById("marke").value;
   var modell = document.getElementById("modell").value;
+  var kraftstoff = document.getElementById("kraftstoff").value;
+  var schaltung = document.getElementById("schaltung").value;
+  var tueren = document.getElementById("tueren").value;
+  var klima = document.getElementById("klima").value;
+  var navigationsgeraet = document.getElementById("navigationsgeraet").value;
+  var plaetze = document.getElementById("plaetze").value;
+  var raucherwagen = document.getElementById("raucherwagen").value;
+  var stellplatznummer = document.getElementById("stellplatznummer").value;
 
 
   db.collection("cars").get().then(function(querySnapshot) {
@@ -28,20 +26,23 @@ function addCar(){
         idcounter++;
 
       });
+
+      // Auto in DB anlegen..
+      var id = idcounter.toString();
+      carRef.doc(id).set({
+      id: idcounter,
+      marke: marke,
+      modell: modell,
+      kraftstoff: kraftstoff,
+      schaltung: schaltung,
+      tueren: tueren,
+      klima: klima,
+      navigationsgeraet:navigationsgeraet,
+      plaetze: plaetze,
+      raucherwagen: raucherwagen,
+      stellplatznummer: stellplatznummer});
   });
 
-  // Auto in DB anlegen..
-  docRef.set({
-  id: idcounter,
-  marke: marke,
-  modell: modell,
-  kraftstoff: kraftstoff,
-  schaltung: schaltung,
-  tueren: tueren,
-  klima: klima,
-  navigationsgeraet:navigationsgeraet,
-  plaetze: plaetze,
-  raucherwagen: raucherwagen,
-  stellplatznummer: stellplatznummer});
+
 
 }
