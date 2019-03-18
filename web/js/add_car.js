@@ -1,4 +1,3 @@
-//Referenzvariablen..
 
 
 function addCar(){
@@ -41,6 +40,9 @@ function addCar(){
       plaetze: plaetze,
       raucherwagen: raucherwagen,
       stellplatznummer: stellplatznummer});
+
+      location.replace('admin_carpool_overview.html');
+
   });
 
 
