@@ -57,4 +57,29 @@ autoverwaltung__________________________________________________________________
 
 auftragsverwaltung______________________________________________________________
 - zu bearbeitende Dateien:
-    - admin_rental_overview.html
+    - admin_rental_overview.html ->Übersicht aller Leihaufträge
+    - user_rental_overview.html -> Übersicht der Leihaufträge von dem einen User
+    - user_rental_new.html -> Formular für neuen Auftrag Übersichtstabellen
+    - add_order.js -> Funktionen für Datenbankeintragung eines neuen Leihauftrags
+    - get_car.js -> Funktion für das "rental_new.html" Formaular, um die Autos aus der Datenbank zu holen
+
+- was schon gemacht ist:
+    - Formular (GUI) für neuen Auftrag erstellen (user)
+    - Funktion für Datenbankeintrag (user) steht in add_order.js
+
+- was gemacht werden muss:
+    - Übersichtsseite für den User
+      -> Nur seine Auträge ! --> verwende die sessionStorage-variable "sessionStorage.uuid" -> in login.js definiert (Fragen Semjon)
+    - get_car.js funktion muss noch verbessert werden
+      - schwirig zu erkären.. momentan werden alle autos mit ihren eigenschaften in die select-objekte eingefügt, weshalb doppelte einträge enstehen
+      - außerdem startet die funktion momentan nur beim start der seite -> muss beim ändern der Zeit / eines Select-objektes neu laden
+    - add_order.js / get_car.js müssen aufeinader angepasst werden..
+      -> momentan wird die carid (id welches auto gebucht wird) noch nicht in der Datenbankeintragung mitgegeben
+    - Übersichtsseite für den Admin
+      -> alle Aufträge aufzeigen .. am besten von alten auträgen, momentan laufenden und in zukuft anstehenden aufträgen trennen
+
+lastbutnotleast_________________________________________________________________
+- was im Anschluss gemacht werden muss:
+    - Funktionen für die Edit, Delete, Add -Buttons/ Icons auf den Overview Seiten erstellen
+    - Funtkionen für Search/Filtersytem in den Overview Seiten erstellen
+    - Alle links Prüfen, damit keine Lücken existieren
