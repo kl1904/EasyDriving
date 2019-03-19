@@ -44,10 +44,18 @@
 
             <ul class="list-unstyled components">
                 <li class="active"> <!-- aktiviert (auf der Seite) -->
-                    <a href="user_rental_overview.html">
+                    <a href="#rental" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                       <i class="fas fa-key"></i>
-                        Rental Overview
+                        Rental
                     </a>
+                    <ul class="collapse list-unstyled" id="rental">
+                        <li>
+                            <a href="user_rental_overview.html">Overview</a>
+                        </li>
+                        <li>
+                            <a href="user_rental_new.html">NewOrder</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="user_profil.html">
