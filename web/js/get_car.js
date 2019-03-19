@@ -1,10 +1,9 @@
 
 var db = firebase.firestore();
 
-let cars = [];
-idcounter = 0;
-
 function getCarData(doc) {
+  let cars = [];
+  idcounter = 0;
   //Wenn der DB-Eintrag users existiert
   db.collection("cars").get().then(function(querySnapshot) {
   //Mache/ Führe für alle Elemente die darauf folgenden Sachen aus
@@ -21,5 +20,16 @@ function getCarData(doc) {
   });
 
 console.log(cars);
+for (i = 0; i <= idcounter.length; i++) {
+  for (j = 0; j <= cars[i].length; j++) {
+    var x = document.getElementById("selectmarke");
+    var option = document.createElement("option");
+    option.text = cars[i][j];
+    x.add(option);
+  }
+
+}
+
+
 
 }
