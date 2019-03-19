@@ -29,7 +29,8 @@ function addCar(){
       // Auto in DB anlegen..
       var id = idcounter.toString();
       carRef.doc(id).set({
-      id: idcounter,
+      carid: idcounter,
+      rentalid: "none";
       marke: marke,
       modell: modell,
       kraftstoff: kraftstoff,

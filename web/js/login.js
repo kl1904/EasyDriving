@@ -4,9 +4,17 @@ firebase.auth().onAuthStateChanged(function(user) {
     // Wenn der user angemeldetist mache ...
     console.log("Du bist angemeldet");
 
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+          sessionStorage.uid = user.uid;
+        }
+    } else {
+      console.log("Sorry, your browser does not support web storage...");
+    }
+
     //Referenzvariablen..
     var db = firebase.firestore();
-    var usersRef = db.collection("users");
+    var userRef = db.collection("users");
     var docRef = db.collection("users").doc(user.uid);
 
     //Hole Benutzerdokumente aus der Datenbank
@@ -26,7 +34,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     } else {
           // Wen der Nutzer keine Dokumente hat lege welche in der DB an ..
-          usersRef.doc(user.uid).set({
+          userRef.doc(user.uid).set({
           role: "user",
           displayName: user.displayName,
           email: user.email,
