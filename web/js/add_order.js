@@ -3,8 +3,9 @@ function addOrder() {
   var idcounter = "0";
   var db = firebase.firestore();
   orderRef = db.collection("order");
-  var abholdatum = document.getElementById("inputDateAbhol");
-  var rueckgabedatum = document.getElementById("inputDateRück");
+  var abholdatum = document.getElementById("inputDateAbhol").value;
+  var rueckgabedatum = document.getElementById("inputDateRück").value;
+  var leihgrund = document.getElementById("inputReason").value;
 
   db.collection("order").get().then(function(querySnapshot) {
   //Mache/ Führe für alle Elemente die darauf folgenden Sachen aus
@@ -19,9 +20,8 @@ function addOrder() {
       orderRef.doc(id).set({
       id: idcounter,
       abholdatum: abholdatum,
-      rueckgabedatum: rueckgabedatum});
-
-      location.replace('user_rental_overview.html');
+      rueckgabedatum: rueckgabedatum,
+      leihgrund: leihgrund});
 
   });
 }
