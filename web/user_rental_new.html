@@ -11,27 +11,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- Awesome Font CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <!-- Awesome Font JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
-
-
-    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/all.css">
 
-    <!-- Our Custom JS -->
-    <script src="js/scripts.js"></script>
 
     </head>
 
@@ -106,15 +94,11 @@
                     </div>
                     <div class="row">
                       <div class="col">
-                        <input id="inputDateAbhol" width="300" value="Abholdatum: " />
+                        <input id="abholdatum" width="300" value="Abholdatum: " />
                       </div>
                       <div class="col">
-                        <input id="inputDateRück" width="300" value="Rückgabedatum: " />
+                        <input id="rueckgabedatum" width="300" value="Rückgabedatum: " />
                       </div>
-                      <script>
-                          $('#inputDateAbhol').datetimepicker({ footer: true, modal: true });
-                          $('#inputDateRück').datetimepicker({ footer: true, modal: true });
-                      </script>
                     </div>
                   </div>
                   <hr>
@@ -124,46 +108,22 @@
                     </div>
                     <div class="row">
                       <div class="col">
-                        <label for="selectmarke">Marke</label>
-                        <select id="selectmarke" class="form-control">
+                        <label for="0">Marke</label>
+                        <select id="0" class="form-control">
                           <option selected>Auswählen</option>
                           <option>...</option>
                         </select>
                       </div>
                       <div class="col">
-                        <label for="selectmedell">Modell</label>
-                        <select id="selectmodell" class="form-control">
+                        <label for="1">Modell</label>
+                        <select id="1" class="form-control">
                           <option selected>Auswählen</option>
                           <option>...</option>
                         </select>
                       </div>
                       <div class="col">
-                        <label for="selectkraftstoff">Kraftstoff</label>
-                        <select id="selectkraftstoff" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                    </div>
-                      <p>
-                    <div class="row">
-                      <div class="col">
-                        <label for="selectschaltung">Schaltung</label>
-                        <select id="selectschaltung" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="selecttüren">Türen</label>
-                        <select id="selecttüren" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="selectklima">Klima</label>
-                        <select id="selectklima" class="form-control">
+                        <label for="2">Kraftstoff</label>
+                        <select id="2" class="form-control">
                           <option selected>Auswählen</option>
                           <option>...</option>
                         </select>
@@ -172,22 +132,46 @@
                       <p>
                     <div class="row">
                       <div class="col">
-                        <label for="selectnavigationsgerät">Navigationsgerät</label>
-                        <select id="selectnavigationsgerät" class="form-control">
+                        <label for="3">Schaltung</label>
+                        <select id="3" class="form-control">
                           <option selected>Auswählen</option>
                           <option>...</option>
                         </select>
                       </div>
                       <div class="col">
-                        <label for="selectraucherwagen">Raucherwagen</label>
-                        <select id="selectrauchewagen" class="form-control">
+                        <label for="4">Türen</label>
+                        <select id="4" class="form-control">
                           <option selected>Auswählen</option>
                           <option>...</option>
                         </select>
                       </div>
                       <div class="col">
-                        <label for="selectstellplatznummer">Stellplatznummer</label>
-                        <select id="selectstellplatznummer" class="form-control">
+                        <label for="5">Klima</label>
+                        <select id="5" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                    </div>
+                      <p>
+                    <div class="row">
+                      <div class="col">
+                        <label for="6">Navigationsgerät</label>
+                        <select id="6" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="7">Raucherwagen</label>
+                        <select id="7" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="8">Stellplatznummer</label>
+                        <select id="8" class="form-control">
                           <option selected>Auswählen</option>
                           <option>...</option>
                         </select>
@@ -201,25 +185,37 @@
                         <textarea class="form-control" id="inputReason" rows="3"></textarea>
                       </div>
                     </div>
-                    <input class="btn btn-dark btn-lg btn-primary btn-block" type="button"  onclick="addOrder()" value="Hinzufuegen">
+                    <input class="btn btn-dark btn-lg btn-primary btn-block" type="button"  onclick="addOrder()" value="Hinzufügen">
                 </form>
 
-                <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-
-                <!-- Our Custom JS -->
-                <script src="js/scripts.js"></script>
-                <script src="js/firebaseinit.js"></script>
-                <script src="js/login.js"></script>
-<<<<<<< HEAD
-                <script src="js/get_car.js"></script>
-=======
-                <script src="js/add_order.js"></script>
->>>>>>> 7ca10b431d1ecf28ff6abe3f0dedbb4581f603d3
 
             </div>
 
         </div>
     </div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <script>
+        $('#abholdatum').datetimepicker({ footer: true, modal: true });
+        $('#rueckgabedatum').datetimepicker({ footer: true, modal: true });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+    <!-- Our Custom JS -->
+    <script src="js/scripts.js"></script>
+    <script src="js/firebaseinit.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/get_car.js"></script>
+    <script src="js/add_order.js"></script>
+    <script> getCarData();</script>
+
 
 </body>
 
