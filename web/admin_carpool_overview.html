@@ -123,11 +123,12 @@
                  data-click-to-select="true"
                  data-toolbar="#toolbar">
             <thead>
-              <tr>
+              <tr id="head">
                 <th data-field="state" data-checkbox="true"></th>
           			<th data-field="id" data-filter-control="input" data-sortable="true">ID</th>
           			<th data-field="marke" data-filter-control="select" data-sortable="true">Marke</th>
           			<th data-field="modell" data-filter-control="select" data-sortable="true">Modell</th>
+                <th data-field="kraftstoff" data-filter-control="select" data-sortable="true">Kraftstoff</th>
           			<th data-field="schaltung" data-filter-control="select" data-sortable="true">Schaltung</th>
                 <th data-field="tueren" data-filter-control="select" data-sortable="true">Türen</th>
                 <th data-field="klima" data-filter-control="select" data-sortable="true">Klima</th>
@@ -137,8 +138,9 @@
           		</tr>
           	</thead>
           	<tbody>
-          		<tr>
+          		<tr id="body">
           			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -154,7 +156,7 @@
             </table>
 
                 <div id="table_icon" style="cursor: pointer;">
-                  <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <a class="edit" title="Edit" data-toggle="tooltip" onclick="editHtmlTbleSelectedRow();"><i class="material-icons">&#xE254;</i></a>
                   <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                   <a class="add" title="Add" data-toggle="tooltip" href="admin_carpool_new.html"><i class="material-icons">&#xE03B;</i></a>
                 </div>
