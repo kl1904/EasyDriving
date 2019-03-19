@@ -100,35 +100,108 @@
                 </div>
 
                 <form>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <label for="inputReason">Leihgrund</label>
-                      <textarea class="form-control" id="reason" rows="3"></textarea>
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
+                  <div class="container">
+                    <div class="row">
                       <label for="inputReason" style="padding-bottom: 10px">Leihdatum</label>
-
-                      <input id="inputDateAbhol" width="300" value="Abholdatum: " />
-                      </p>
-                      <input id="inputDateRück" width="300" value="Rückgabedatum: " />
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <input id="inputDateAbhol" width="300" value="Abholdatum: " />
+                      </div>
+                      <div class="col">
+                        <input id="inputDateRück" width="300" value="Rückgabedatum: " />
+                      </div>
                       <script>
                           $('#inputDateAbhol').datetimepicker({ footer: true, modal: true });
                           $('#inputDateRück').datetimepicker({ footer: true, modal: true });
                       </script>
                     </div>
                   </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <label for="inputCarID">Fahrzeug</label>
-                      <select id="inputCarID" class="form-control">
-                        <option selected>Auswählen</option>
-                        <option>...</option>
-                      </select>
+                  <hr>
+                  <div class="container">
+                    <div class="row">
+                      <label for="inputReason" style="padding-bottom: 10px">Fahrzeug</label>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <label for="inputCarID">Marke</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="inputCarID">Modell</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="inputCarID">Kraftstoff</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                    </div>
+                      <p>
+                    <div class="row">
+                      <div class="col">
+                        <label for="inputCarID">Schaltung</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="inputCarID">Türen</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="inputCarID">Klima</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                    </div>
+                      <p>
+                    <div class="row">
+                      <div class="col">
+                        <label for="inputCarID">Navigationsgerät</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="inputCarID">Raucherwagen</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <label for="inputCarID">Stellplatznummer</label>
+                        <select id="inputCarID" class="form-control">
+                          <option selected>Auswählen</option>
+                          <option>...</option>
+                        </select>
+                      </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary btn-dark">buchen</button>
+                  <hr>
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <label for="inputReason">Leihgrund</label>
+                        <textarea class="form-control" id="reason" rows="3"></textarea>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-dark">buchen</button>
                 </form>
 
                 <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
