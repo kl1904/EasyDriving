@@ -1,0 +1,60 @@
+Text zur Anwendung ... (kann jemand von euch ergänzen)..
+
+Die Branchen sind folgendermaßen aufgeteilt:
+
+Wenn jemand etwas gemacht hat und in seine Branch gepuscht hat, sollte er dies ein bisschen wärend der commits dokumentieren und am Ende hier bei was gemacht ist ergänzen.
+Dannach kann einer von uns diese Branch runterladen und testen.
+Funktioniert alles gut kann es in master gepuscht werden. Sobald das passiert ist, bitte die Gruppe informieren, damit alle fetchen können um den neusten stand zu haben.
+Bei Fragen Semjon schreiben..
+
+benutzerverwaltung______________________________________________________________
+- zu bearbeitende Dateien:
+    - admin_user_all.html -> Übersichtstabelle aller Nutzer
+    - admin_user_new -> Formular für neuen Nutzer
+    - write_user_table.js -> funktion für das hinzufügen von daten in die Benutzerübersichtstabelle in "admin_user_all"
+    - add_user.js -> funktion für den datenbankeintrag ->Daten aus dem Formular in "admin_user_new"
+
+- was schon gemacht ist:
+    - Übersichtstabelle-GUI ist soweit fertig
+
+- was gemacht werden muss:
+    - Das Formular für einen neuen Nutzer muss noch angepasst werden
+      ->orientiereung für Formular ist login.js da ist beschrieben, welche variablen ein Nutzer hat (in der Datenbank eingetragen bekommt).
+      ->Error funktionen können noch hinzugefügt werden (wenn felder leer sind etc.) und mit errorMessage div verknüpfen
+    - die Funktion für die Datenbankeintragung muss in add_user.js gemacht werden
+      -> zu beachten ist dass man einen neuer user in "firebase.authentifikation" und im storage unter "users.uid" eingetragen werden muss ->orientiereung login.js (Fragen Semjon)
+
+support -> (Tobias)_____________________________________________________________
+- zu bearbeitende Dateien:
+    - user_support.html -> Kontaktformular für User
+    - admin_support.html -> Übersicht mit userkontakten
+
+- was schon gemacht ist:
+    - Tobias was hast du gemacht?
+
+- was gemacht werden muss:
+    - Formular + Übersicht GUI
+      -> kannst dich an anderen Formularen orientieren (..new.html) / für Übersicht kannst du dich an anderen Übersichtstabellen orientieren (..overview.html)
+    - funktion für supporteintrag in Datenbank -> datei add_support.js erstellen
+    - funktion für tabelleneinträge -> datei write_support_table.js erstellen
+
+autoverwaltung__________________________________________________________________
+- zu bearbeitende Dateien:
+    - admin_carpool_new.html -> Formular für neue Autos in DB eingetragen
+    - admin_carpool_overview.html -> Übersichtstabelle mit allen autos
+    - add_car.js -> Funktion für neues Auto DB-Eintrag
+    - write_carpool_table.html -> Funktion für tabelleneinträge
+
+- was schon gemacht ist:
+    - addCar Funktion funktioniert für das Formular in "..carpool_new.html"
+
+- was gemacht werden muss:
+    - Formular muss von leicht verändert werden (platzhalter ändern etc./ verschönern)
+    - Übersichtstabelle muss leicht verändert werden -> würde weniger info anzeigen mit link zu deteils von einzelnen autos
+      - entweder Html-Seit für eizene Autos erstellen ("admin_carpool_details.html")
+        -> muss basierend auf die Reihe die man anklickt die Details von dem Auto anzeigen
+      - oder in write_carpool_table.js ein Funktion addDetailRow() hinzufügen für weitere Details unter der Datenreihe die geklickt wurde
+
+auftragsverwaltung______________________________________________________________
+- zu bearbeitende Dateien:
+    - admin_rental_overview.html
