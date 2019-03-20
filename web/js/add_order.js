@@ -6,6 +6,15 @@ function addOrder() {
   var uid = sessionStorage.uid;
   var abholdatum = document.getElementById("abholdatum").value;
   var rueckgabedatum = document.getElementById("rueckgabedatum").value;
+  var marke = document.getElementById("marke").value;
+  var modell = document.getElementById("modell").value;
+  var kraftsstoff = document.getElementById("kraftstoff").value;
+  var schaltung = document.getElementById("schaltung").value;
+  var tueren = document.getElementById("tueren").value;
+  var klima = document.getElementById("klima").value;
+  var navigationsgeraet = document.getElementById("navigationsgeraet").value;
+  var raucherwagen = document.getElementById("raucherwagen").value;
+  var stellplatznummer = document.getElementById("stellplatznummer").value;
   var leihgrund = document.getElementById("leihgrund").value;
 
   db.collection("order").get().then(function(querySnapshot) {
@@ -24,6 +33,15 @@ function addOrder() {
       uid:  uid,
       abholdatum: abholdatum,
       rueckgabedatum: rueckgabedatum,
+      marke: marke,
+      modell: modell,
+      kraftstoff: kraftstoff,
+      schaltung: schaltung,
+      tueren: tueren,
+      klima: klima,
+      navigationsgeraet: navigationsgeraet,
+      raucherwagen: raucherwagen,
+      stellplatznummer: stellplatznummer,
       leihgrund: leihgrund});
 
   });
