@@ -30,7 +30,7 @@ function addOrder(){
 
       // Auto in DB anlegen..
       var id = idcounter.toString();
-      orderRef.doc(id).set({
+      orderRef.doc(id).add({
       rentid: idcounter,
       vorname: vorname,
       name: name,
@@ -47,7 +47,7 @@ function addOrder(){
       raucherwagen: raucherwagen,
       stellplatznummer: stellplatznummer});
 
-      //location.replace('admin_carpool_overview.html');
+      //location.replace('user_rental_overview.html');
 
   });
 
