@@ -3,14 +3,16 @@ var db = firebase.firestore();
 const markeList = document.querySelector('#marke');
 const modellList = document.querySelector('#modell');
 const kraftstoffList = document.querySelector('#kraftstoff');
-const schaltungList = document.querySelector('#schaltung');
 const tuerenList = document.querySelector('#tueren');
 const klimaList = document.querySelector('#klima');
 const navigationsgeraetList = document.querySelector('#navigationsgeraet');
+
 const raucherwagenList = document.querySelector('#raucherwagen');
 const stellplatznummerList = document.querySelector('#stellplatznummer');
 
 function renderOrder(doc) {
+
+  let td = document.createElement('td');
 
   //neues Element (Zeile) in der Tabelle Anlegen
   let marke = document.createElement('td');
@@ -50,6 +52,17 @@ function renderOrder(doc) {
   stellplatznummer.setAttribute('data-id', doc.id);
   stellplatznummer.textContent = doc.data().stellplatznummer;
 
+  td.appendChild(marke);
+  td.appendChild(modell);
+  td.appendChild(kraftstoff);
+  td.appendChild(schaltung);
+  td.appendChild(tueren);
+  td.appendChild(klima);
+  td.appendChild(navigationsgeraet);
+  td.appendChild(raucherwagen);
+  td.appendChild(stellplatznummer);
+
+
   //Daten der Liste hinzufügen
     markeList.appendChild(marke);
     modellList.appendChild(modell);
@@ -60,7 +73,6 @@ function renderOrder(doc) {
     navigationsgeraetList.appendChild(navigationsgeraet);
     raucherwagenList.appendChild(raucherwagen);
     stellplatznummerList.appendChild(stellplatznummer);
-
 
 }
 
