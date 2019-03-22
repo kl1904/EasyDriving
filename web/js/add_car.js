@@ -30,7 +30,7 @@ function addCar(){
       var id = idcounter.toString();
       carRef.doc(id).set({
       carid: idcounter,
-      rentalid: "none";
+      //rentalid: "none";
       marke: marke,
       modell: modell,
       kraftstoff: kraftstoff,
@@ -42,7 +42,7 @@ function addCar(){
       raucherwagen: raucherwagen,
       stellplatznummer: stellplatznummer});
 
-      location.replace('admin_carpool_overview.html');
+      //location.replace('admin_carpool_overview.html');
 
   });
 
