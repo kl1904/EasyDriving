@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <link rel="shortcut icon" href="img/favicon.png">
-    <title>EasyDriving</title>
+    <title>Collapsible sidebar using Bootstrap 4</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -155,8 +154,7 @@
                           <div class="form-group">
                               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                   <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                                  <input type="text" name="email" class="form-control" id="email"
-                                         placeholder="you@example.com" required autofocus>
+                                  <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required autofocus />
                               </div>
                           </div>
                       </div>
@@ -176,16 +174,8 @@
                           <div class="form-group has-danger">
                               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                   <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                                  <input type="password" name="password" class="form-control" id="password"
-                                         placeholder="Password" required>
+                                  <input type="password" name="password" class="form-control" id="password" placeholder="Password" required />
                               </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-control-feedback">
-                                  <span class="text-danger align-middle">
-                                      <i class="fas fa-times"></i> Example Error Message</i>
-                                  </span>
                           </div>
                       </div>
                   </div>
@@ -206,9 +196,23 @@
                       </div>
                   </div>
                   <div class="row">
+                      <div class="col-md-3 field-label-responsive">
+                          <label for="role">Rolle</label>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group has-danger">
+                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                  <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-user-tag"></i></div>
+                                  <input type="text" name="role" class="form-control" id="role" placeholder="admin/user" required />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
                       <div class="col-md-3"></div>
                       <div class="col-md-6">
-                          <button type="submit" class="btn btn-success" onclick="addUser()"><i class="fa fa-user-plus"></i> Register</button>
+
+                          <input class="btn btn-dark btn-lg btn-primary btn-block" type="button"  onclick="addUser()" value="Register" />
                       </div>
                   </div>
               </form>
@@ -242,6 +246,8 @@
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/add_user.js"></script>
+
 
 
 </body>
