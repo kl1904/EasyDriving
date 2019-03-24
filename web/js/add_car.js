@@ -1,5 +1,5 @@
 
-
+//Neues Auto hinzufügen
 function addCar(){
 
   var idcounter = "0";
