@@ -30,7 +30,7 @@ function addCar(){
       var id = idcounter.toString();
       carRef.doc(id).set({
       carid: idcounter,
-      rentalid: "none";
+      //rentalid: "none";
       marke: marke,
       modell: modell,
       kraftstoff: kraftstoff,
