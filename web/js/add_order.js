@@ -17,6 +17,7 @@ function addOrder(){
   var plaetze = document.getElementById("plaetze").value;
   var raucherwagen = document.getElementById("raucherwagen").value;
   var stellplatznummer = document.getElementById("stellplatznummer").value;
+  var leihgrund = document.getElementById("leihgrund").value;
 
 
   db.collection("order").get().then(function(querySnapshot) {
@@ -28,7 +29,7 @@ function addOrder(){
 
       });
 
-      // Auto in DB anlegen..
+      // Order in DB anlegen..
       var id = idcounter.toString();
       orderRef.add({
       rentid: idcounter,
@@ -45,24 +46,10 @@ function addOrder(){
       navigationsgeraet:navigationsgeraet,
       plaetze: plaetze,
       raucherwagen: raucherwagen,
-      stellplatznummer: stellplatznummer});
+      stellplatznummer: stellplatznummer,
+      leihgrund: leihgrund});
 
-      //location.replace('user_rental_overview.html');
+      
 
   });
-}
-
-
-function updateSelected(marke, modell, kraftstoff) {
-
-  // populate select 'marke'
-     var parentElement = document.getElementById('marke');
-     parentElement.innerHTML = null;
-     for (var i = 1; i < music.length; i++) {
-       var newChild = document.createElement('option');
-       newChild.setAttribute('value', i);
-       if (i == marke) newChild.setAttribute('selected', 'selected');
-       newChild.innerHTML = marke[i][0];
-       parentElement.appendChild(newChild);
-     }
 }
