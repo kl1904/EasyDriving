@@ -7,6 +7,7 @@ const schaltungList = document.querySelector('#schaltung');
 const tuerenList = document.querySelector('#tueren');
 const klimaList = document.querySelector('#klima');
 const navigationsgeraetList = document.querySelector('#navigationsgeraet');
+const plaetzeList = document.querySelector('#plaetze');
 const raucherwagenList = document.querySelector('#raucherwagen');
 const stellplatznummerList = document.querySelector('#stellplatznummer');
 
@@ -24,6 +25,7 @@ function renderCar(doc){
   let tueren = document.createElement('option');
   let klima = document.createElement('option');
   let navigationsgeraet = document.createElement('option');
+  let plaetze = document.createElement('option')
   let raucherwagen = document.createElement('option');
   let stellplatznummer = document.createElement('option');
 
@@ -32,7 +34,7 @@ function renderCar(doc){
 //Attribute und Daten setzen
   marke.setAttribute('data-id', doc.id);
   marke.textContent = doc.data().marke;
-  //marke.textContent = doc.data().modell;
+
 
   modell.setAttribute('data-id', doc.id);
   modell.textContent = doc.data().modell;
@@ -52,6 +54,9 @@ function renderCar(doc){
   navigationsgeraet.setAttribute('data-id', doc.id);
   navigationsgeraet.textContent = doc.data().navigationsgeraet;
 
+  plaetze.setAttribute('data-id', doc.id);
+  plaetze.textContent = doc.data().plaetze;
+
   raucherwagen.setAttribute('data-id', doc.id);
   raucherwagen.textContent = doc.data().raucherwagen;
 
@@ -68,6 +73,7 @@ function renderCar(doc){
   tuerenList.appendChild(tueren);
   klimaList.appendChild(klima);
   navigationsgeraetList.appendChild(navigationsgeraet);
+  plaetzeList.appendChild(plaetze);
   raucherwagenList.appendChild(raucherwagen);
   stellplatznummerList.appendChild(stellplatznummer);
 
