@@ -46,12 +46,14 @@ function addOrderTableRow(doc) {
 }
 
 function deleteOrderTableRow(doc) {
-  db.collection("order").doc(id).delete().then(function(){
+  db.collection("order").doc("").delete().then(function(){
 
-  
+    //var x = document.getElementById("order_table");
+    //x.remove(x.selectedIndex);
 
     console.log("document successfully delete");
   }).catch(function(error){
     console.error("Error removing document: ", error);
   })
+
 }

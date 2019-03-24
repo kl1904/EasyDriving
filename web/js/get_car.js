@@ -32,6 +32,7 @@ function renderCar(doc){
 //Attribute und Daten setzen
   marke.setAttribute('data-id', doc.id);
   marke.textContent = doc.data().marke;
+  //marke.textContent = doc.data().modell;
 
   modell.setAttribute('data-id', doc.id);
   modell.textContent = doc.data().modell;

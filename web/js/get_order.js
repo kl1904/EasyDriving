@@ -1,84 +1,45 @@
 var db = firebase.firestore();
 
-const markeList = document.querySelector('#marke');
-const modellList = document.querySelector('#modell');
-const kraftstoffList = document.querySelector('#kraftstoff');
-const tuerenList = document.querySelector('#tueren');
-const klimaList = document.querySelector('#klima');
-const navigationsgeraetList = document.querySelector('#navigationsgeraet');
-
-const raucherwagenList = document.querySelector('#raucherwagen');
-const stellplatznummerList = document.querySelector('#stellplatznummer');
-
-function renderOrder(doc) {
-
-  let td = document.createElement('td');
-
-  //neues Element (Zeile) in der Tabelle Anlegen
-  let marke = document.createElement('td');
-  let modell = document.createElement('td');
-  let kraftstoff = document.createElement('td');
-  let schaltung = document.createElement('td');
-  let tueren = document.createElement('td');
-  let klima = document.createElement('td');
-  let navigationsgeraet = document.createElement('td');
-  let raucherwagen = document.createElement('td');
-  let stellplatznummer = document.createElement('td');
-
-  marke.setAttribute('data-id', doc.id);
-  marke.textContent = doc.data().marke;
-
-  modell.setAttribute('data-id', doc.id);
-  modell.textContent = doc.data().modell;
-
-  kraftstoff.setAttribute('data-id', doc.id);
-  kraftstoff.textContent = doc.data().kraftstoff;
-
-  schaltung.setAttribute('data-id', doc.id);
-  schaltung.textContent = doc.data().schaltung;
-
-  tueren.setAttribute('data-id', doc.id);
-  tueren.textContent = doc.data().tueren;
-
-  klima.setAttribute('data-id', doc.id);
-  klima.textContent = doc.data().klima;
-
-  navigationsgeraet.setAttribute('data-id', doc.id);
-  navigationsgeraet.textContent = doc.data().navigationsgeraet;
-
-  raucherwagen.setAttribute('data-id', doc.id);
-  raucherwagen.textContent = doc.data().raucherwagen;
-
-  stellplatznummer.setAttribute('data-id', doc.id);
-  stellplatznummer.textContent = doc.data().stellplatznummer;
-
-  td.appendChild(marke);
-  td.appendChild(modell);
-  td.appendChild(kraftstoff);
-  td.appendChild(schaltung);
-  td.appendChild(tueren);
-  td.appendChild(klima);
-  td.appendChild(navigationsgeraet);
-  td.appendChild(raucherwagen);
-  td.appendChild(stellplatznummer);
-
-
-  //Daten der Liste hinzufügen
-    markeList.appendChild(marke);
-    modellList.appendChild(modell);
-    kraftstoffList.appendChild(kraftstoff);
-    schaltungList.appendChild(schaltung);
-    tuerenList.appendChild(tueren);
-    klimaList.appendChild(klima);
-    navigationsgeraetList.appendChild(navigationsgeraet);
-    raucherwagenList.appendChild(raucherwagen);
-    stellplatznummerList.appendChild(stellplatznummer);
-
-}
-
-//getting data
-db.collection("order").get().then((snapshot) =>{
-  snapshot.docs.forEach(doc => {
-    renderOrder(doc);
-  })
+var db = firebase.firestore();
+//Wenn der DB-Eintrag users existiert
+db.collection("order").get().then(function(querySnapshot) {
+//Mache/ Führe für alle Elemente die darauf folgenden Sachen aus
+    querySnapshot.forEach(function(doc) {
+        //schreiben alle User mit ihren Daten in die Konsole
+        console.log(doc.id, " => ", doc.data());
+        //Rufe Funktion addUserTableRow auf
+        addOrderTableRow(doc.data());
+        //Wenn ein Objekt mit dem Classennamen no-records-found existiert setze bei allen das display auf none (unsichtbar)
+        if (document.getElementsByClassName("no-records-found")){
+            var elems = document.getElementsByClassName('no-records-found');
+            for (var i=0;i<elems.length;i+=1){
+                elems[i].style.display = 'none';
+            }
+        }
+    });
 });
+
+var counter = 0;
+function addOrderTableRow(doc) {
+    //Variablen newRow -> neue Datenreihe ; cols -> Zellenininhalte
+    var newRow = $("<tr>");
+    var cols = "";
+
+    cols += '<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
+    cols += '<td>'+doc.marke+'</td>';
+    cols += '<td>'+doc.modell+'</td>';
+    cols += '<td>'+doc.kraftstoff+'</td>';
+    cols += '<td>'+doc.schaltung+'</td>';
+    cols += '<td>'+doc.tueren+'</td>';
+    cols += '<td>'+doc.klima+'</td>';
+    cols += '<td>'+doc.navigationsgeraet+'</td>';
+    cols += '<td>'+doc.plaetze+'</td>';
+    cols += '<td>'+doc.raucherwagen+'</td>';
+    cols += '<td>'+doc.stellplatznummer+'</td>';
+
+    //Füge die Zelleninhalte in die neue Datenreihe und füge diese in die Tabelle mit der id user_table
+    newRow.append(cols);
+    $("table.order_table").append(newRow);
+
+    counter++;
+}
