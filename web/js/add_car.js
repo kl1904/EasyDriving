@@ -42,7 +42,7 @@ function addCar(){
       raucherwagen: raucherwagen,
       stellplatznummer: stellplatznummer});
 
-      location.replace('admin_carpool_overview.html');
+      //location.replace('admin_carpool_overview.html');
 
   });
 

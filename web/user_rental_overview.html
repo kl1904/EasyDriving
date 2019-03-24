@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>Übersicht</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,10 +20,10 @@
 
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- Font table css -->
+    <!-- Font table css
     <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
     <link rel='stylesheet' href='http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css'>
-
+  -->
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/all.css">
 
@@ -50,10 +50,10 @@
                     </a>
                     <ul class="collapse list-unstyled" id="rental">
                         <li>
-                            <a href="user_rental_overview.html">Overview</a>
+                            <a href="user_rental_overview.html">Übersicht</a>
                         </li>
                         <li>
-                            <a href="user_rental_new.html">NewOrder</a>
+                            <a href="user_rental_new.html">Antrag erstellen</a>
                         </li>
                     </ul>
                 </li>
@@ -98,8 +98,8 @@
             </nav>
 
             <div class="container">
-
-            <table id="table"
+            <div class="table-responsive-sm">
+            <table id="order_table" class="order_table"
                  data-toggle="table"
                  data-search="true"
                  data-filter-control="true"
@@ -108,56 +108,33 @@
             <thead>
               <tr>
                 <th data-field="state" data-checkbox="true"></th>
-          			<th data-field="prenom" data-filter-control="input" data-sortable="true">ID</th>
-          			<th data-field="date" data-filter-control="select" data-sortable="true">Fahrzeug</th>
-          			<th data-field="examen" data-filter-control="select" data-sortable="true">Abholdatum</th>
-          			<th data-field="note" data-sortable="true">Rückgabedatum</th>
+          			<th data-field="prenom" data-sortable="true">ID</th>
+                <th data-field="abholdatum" data-sortable="true">Abholdatum</th>
+                <th data-field="rueckgabedatum" data-sortable="true">Rückgabedatum</th>
+          			<th data-field="marke" data-sortable="true">Marke</th>
+          			<th data-field="modell" data-sortable="true">Modell</th>
+                <th data-field="kraftstoff" data-sortable="true">Kraftstoff</th>
+          			<th data-field="schaltung" data-sortable="true">Schaltung</th>
+                <th data-field="tueren" data-sortable="true">Türen</th>
+                <th data-field="klima" data-sortable="true">Klima</th>
+                <th data-field="navigationsgeraet" data-sortable="true">Navigationsgerät</th>
+                <th data-field="raucherwagen" data-sortable="true">Raucherwagen</th>
+                <th data-field="stellplatznummer" data-sortable="true">Stellplatznummer</th>
           		</tr>
           	</thead>
-          	<tbody>
-          		<tr>
-          			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-                <td>1</td>
-                <td>Seat Mii</td>
-                <td>10/01/2018</td>
-                <td>12/01/2018</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="1" name="btSelectItem" type="checkbox"></td>
-                <td>2</td>
-                <td>Toyota Aygo</td>
-                <td>13/03/18</td>
-                <td>14/03/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="2" name="btSelectItem" type="checkbox"></td>
-                <td>3</td>
-                <td>Audi A1</td>
-                <td>05/04/18</td>
-                <td>03/09/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="3" name="btSelectItem" type="checkbox"></td>
-                <td>4</td>
-                <td>Elektro-Golf</td>
-                <td>07/09/18</td>
-                <td>10/10/18</td>
-              </tr>
-              <tr>
-                <td class="bs-checkbox "><input data-index="4" name="btSelectItem" type="checkbox"></td>
-                <td>5</td>
-                <td>Audi A3</td>
-                <td>17/10/18</td>
-                <td>01/02/2018</td>
-              </tr>
+            	<tbody id="order_table_body">
+
+
              </tbody>
             </table>
-
-                <div id="table_icon" style="cursor: pointer;">
-                  <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                </div>
           </div>
 
+                <div id="table_icon" style="cursor: pointer;">
+                  <a class="delete" title="Delete" data-toggle="tooltip" onclick="deleteOrderTableRow()"><i class="material-icons">&#xE872;</i></a>
+                  <a class="add" title="Add" data-toggle="tooltip" href="user_rental_new.html"><i class="material-icons">&#xE03B;</i></a>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -186,6 +163,7 @@
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/user_write_order_table.js"></script>
 
 </body>
 
