@@ -104,15 +104,16 @@ function addCarToTableRow(doc) {
                    {
                      // get the seected row index
                      rIndex = this.rowIndex;
-                     document.getElementById("marke").value = this.cell[0].innerHTML;
-                     document.getElementById("modell").value = this.cell[1].innerHTML;
-                     document.getElementById("kraftstoff").value = this.cell[2].innerHTML;
-                     document.getElementById("schaltung").value = this.cell[3].innerHTML;
-                     document.getElementById("tueren").value = this.cell[4].innerHTML;
-                     document.getElementById("klima").value = this.cell[5].innerHTML;
-                     document.getElementById("navigationsgeraet").value = this.cell[6].innerHTML;
-                     document.getElementById("raucherwagen").value = this.cell[7].innerHTML;
-                     document.getElementById("stellplatznummer").value = this.cell[8].innerHTML;
+                     document.getElementById("marke").value = this.cell[1].innerHTML;
+                     document.getElementById("modell").value = this.cell[2].innerHTML;
+                     document.getElementById("kraftstoff").value = this.cell[3].innerHTML;
+                     document.getElementById("schaltung").value = this.cell[4].innerHTML;
+                     document.getElementById("tueren").value = this.cell[5].innerHTML;
+                     document.getElementById("klima").value = this.cell[6].innerHTML;
+                     document.getElementById("navigationsgeraet").value = this.cell[7].innerHTML;
+                     document.getElementById("plaetze").value = this.cell[8].innerHTML;
+                     document.getElementById("raucherwagen").value = this.cell[9].innerHTML;
+                     document.getElementById("stellplatznummer").value = this.cell[10].innerHTML;
                    };
                }
            }
