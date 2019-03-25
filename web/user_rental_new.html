@@ -17,6 +17,10 @@
 
     <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- Font table css -->
+    <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
+    <link rel='stylesheet' href='http://rawgit.com/vitalets/x-editable/master/dist/bootstrap3-editable/css/bootstrap-editable.css'>
+
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/all.css">
 
@@ -41,10 +45,10 @@
                   </a>
                   <ul class="collapse list-unstyled" id="rental">
                       <li>
-                          <a href="user_rental_overview.html">Overview</a>
+                          <a href="user_rental_overview.html">Übersicht</a>
                       </li>
                       <li>
-                          <a href="user_rental_new.html">NewOrder</a>
+                          <a href="user_rental_new.html">Auftrag erstellen</a>
                       </li>
                   </ul>
               </li>
@@ -95,10 +99,34 @@
                   <h1 class="h2">Neuen Auftrag erstellen</h1>
                 </div>
 
-                <form>
+                <form id="addOrder">
                   <div class="container">
                     <div class="row">
-                      <label for="inputReason" style="padding-bottom: 10px">Leihdatum</label>
+                      <label for="inputReason" style="padding-bottom: 10px" class="text-monospace">Auftraggeber</label>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Vorname</span>
+                          </div>
+                            <input id="vorname" type="text" class="form-control" placeholder="Rainer" aria-label="vorname" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">Name</span>
+                          </div>
+                            <input id="name" type="text" class="form-control" placeholder="Zufall">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="container">
+                    <div class="row">
+                      <label for="inputReason" style="padding-bottom: 10px" class="text-monospace">Leihdatum</label>
                     </div>
                     <div class="row">
                       <div class="col">
@@ -108,95 +136,128 @@
                         <input id="rueckgabedatum" width="300" value="Rückgabedatum: " />
                       </div>
                     </div>
+
                   </div>
                   <hr>
                   <div class="container">
                     <div class="row">
-                      <label for="inputReason" style="padding-bottom: 10px">Fahrzeug</label>
+                      <label for="inputReason" style="padding-bottom: 12px" class="text-monospace">Fahrzeug</label>
                     </div>
-                    <div class="row">
-                      <div class="col">
-                        <label for="0">Marke</label>
-                        <select id="0" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="1">Modell</label>
-                        <select id="1" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="2">Kraftstoff</label>
-                        <select id="2" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                    </div>
-                      <p>
-                    <div class="row">
-                      <div class="col">
-                        <label for="3">Schaltung</label>
-                        <select id="3" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="4">Türen</label>
-                        <select id="4" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="5">Klima</label>
-                        <select id="5" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                    </div>
-                      <p>
-                    <div class="row">
-                      <div class="col">
-                        <label for="6">Navigationsgerät</label>
-                        <select id="6" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="7">Raucherwagen</label>
-                        <select id="7" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                      <div class="col">
-                        <label for="8">Stellplatznummer</label>
-                        <select id="8" class="form-control">
-                          <option selected>Auswählen</option>
-                          <option>...</option>
-                        </select>
-                      </div>
-                    </div>
+
+                    <div class="container">
+                    <div class="table-responsive-sm">
+                    <table id="order_table" class="order_table"
+                         data-toggle="table"
+                         data-filter-control="true"
+                         data-click-to-select="true"
+                         data-toolbar="#toolbar">
+                    <thead>
+                      <tr>
+                  			<th data-field="marke">Marke</th>
+                  			<th data-field="modell">Modell</th>
+                        <th data-field="kraftstoff">Kraftstoff</th>
+                  			<th data-field="schaltung">Schaltung</th>
+                        <th data-field="tueren">Türen</th>
+                        <th data-field="klima">Klima</th>
+                        <th data-field="navigationsgeraet">Navigationsgerät</th>
+                        <th data-field="plaetze">Plätze</th>
+                        <th data-field="raucherwagen">Raucherwagen</th>
+                        <th data-field="stellplatznummer">Stellplatznummer</th>
+                  		</tr>
+                  	</thead>
+                    	<tbody id="order_table_body">
+
+                     </tbody>
+                    </table>
                   </div>
+                  <br>
+                  <div class="row">
+                     <div class="col">
+                       <label for="marke">Marke</label>
+                       <select id="marke" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                     <div class="col">
+                       <label for="modell">Modell</label>
+                       <select id="modell" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                     <div class="col">
+                       <label for="kraftstoff">Kraftstoff</label>
+                       <select id="kraftstoff" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                   </div>
+                     <p>
+                   <div class="row">
+                     <div class="col">
+                       <label for="schaltung">Schaltung</label>
+                       <select id="schaltung" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                     <div class="col">
+                       <label for="tueren">Türen</label>
+                       <select id="tueren" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                     <div class="col">
+                       <label for="klima">Klima</label>
+                       <select id="klima" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                   </div>
+                     <p>
+                   <div class="row">
+                     <div class="col">
+                       <label for="navigationsgeraet">Navigationsgerät</label>
+                       <select id="navigationsgeraet" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                     <div class="col">
+                       <label for="plaetze">Plätze</label>
+                       <select id="plaetze" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                     <div class="col">
+                       <label for="raucherwagen">Raucherwagen</label>
+                       <select id="raucherwagen" class="form-control">
+                         <option selected>Auswählen</option>
+                       </select>
+                     </div>
+                   </div>
+                   <p>
+                     <div class="row">
+                       <div class="col">
+                         <label for="stellplatznummer">Stellplatznummer</label>
+                         <select id="stellplatznummer" class="form-control">
+                           <option selected>Auswählen</option>
+                         </select>
+                       </div>
+                       <div class="col">
+
+                       </div>
+                       <div class="col">
+
+                       </div>
+                   </div>
+                </div>
                   <hr>
                     <div class="form-row">
                       <div class="form-group col-md-4">
-                        <label for="leihgrund">Leihgrund</label>
+                        <label for="leihgrund" class="text-monospace">Leihgrund</label>
                         <textarea class="form-control" id="leihgrund" rows="3"></textarea>
                       </div>
                     </div>
-                    <input class="btn btn-dark btn-lg btn-primary btn-block" type="button"  onclick="addOrder()" value="Hinzufügen">
+                    <input class="btn btn-dark btn-lg btn-primary btn-block" type="button" onclick="addOrder()" value="Hinzufügen">
                 </form>
-
-
             </div>
 
         </div>
@@ -214,15 +275,28 @@
         $('#rueckgabedatum').datetimepicker({ footer: true, modal: true });
     </script>
 
+    <!-- Table JS -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/editable/bootstrap-table-editable.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js'></script>
+    <script src='http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js'></script>
+
+
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
+    <!-- Awesome Font JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
 
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/get_car.js"></script>
+    <script src="js/get_order.js"></script>
     <script src="js/add_order.js"></script>
-    <script> getCarData();</script>
+    <script src="js/get_car.js"></script>
+
 
 
 </body>
