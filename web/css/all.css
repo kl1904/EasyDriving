@@ -42,6 +42,10 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
+table a:hover {
+    color: blue;
+    font-weight: bold;
+}
 
 .navbar {
     padding: 15px 10px;
