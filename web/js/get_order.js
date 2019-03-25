@@ -1,4 +1,4 @@
-
+//
 var db = firebase.firestore();
 //Wenn der DB-Eintrag users existiert
 db.collection("cars").get().then(function(querySnapshot) {
@@ -23,8 +23,7 @@ function addOrderTableRow(doc) {
     //Variablen newRow -> neue Datenreihe ; cols -> Zellenininhalte
     var newRow = $("<tr>");
     var cols = "";
-    cols += '<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
-    cols += '<td>'+doc.carid+'</td>';
+
     cols += '<td>'+doc.marke+'</td>';
     cols += '<td>'+doc.modell+'</td>';
     cols += '<td>'+doc.kraftstoff+'</td>';
