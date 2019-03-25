@@ -6,8 +6,6 @@ db.collection("cars").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         //schreiben alle User mit ihren Daten in die Konsole
         console.log(doc.id, " => ", doc.data());
-        //Rufe Funktion addUserTableRow auf
-        addCarToTableRow(doc.data());
         //Wenn ein Objekt mit dem Classennamen no-records-found existiert setze bei allen das display auf none (unsichtbar)
         if (document.getElementsByClassName("no-records-found")){
             var elems = document.getElementsByClassName('no-records-found');
@@ -15,31 +13,29 @@ db.collection("cars").get().then(function(querySnapshot) {
                 elems[i].style.display = 'none';
             }
         }
+
+        //Variablen newRow -> neue Datenreihe ; cols -> Zellenininhalte
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += '<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
+        cols += '<td>'+doc.data().carid+'</td>';
+        cols += '<td>'+doc.data().klima+'</td>';
+        cols += '<td>'+doc.data().kraftstoff+'</td>';
+        cols += '<td>'+doc.data().marke+'</td>';
+        cols += '<td>'+doc.data().modell+'</td>';
+        cols += '<td>'+doc.data().navigationsgeraet+'</td>';
+        cols += '<td>'+doc.data().plaetze+'</td>';
+        cols += '<td>'+doc.data().raucherwagen+'</td>';
+        cols += '<td>'+doc.data().schaltung+'</td>';
+        cols += '<td>'+doc.data().stellplatznummer+'</td>';
+        cols += '<td>'+doc.data().tueren+'</td>';
+
+        //Füge die Zelleninhalte in die neue Datenreihe und füge diese in die Tabelle mit der id user_table
+        newRow.append(cols);
+        $("table.car_table").append(newRow);
+
+
     });
+
 });
-
-var counter = 0;
-function addCarToTableRow(doc) {
-    //Variablen newRow -> neue Datenreihe ; cols -> Zellenininhalte
-    var newRow = $("<tr>");
-    var cols = "";
-
-    cols += '<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
-    cols += '<td>'+doc.id+'</td>';
-    cols += '<td>'+doc.klima+'</td>';
-    cols += '<td>'+doc.kraftstoff+'</td>';
-    cols += '<td>'+doc.marke+'</td>';
-    cols += '<td>'+doc.modell+'</td>';
-    cols += '<td>'+doc.navigationsgeraet+'</td>';
-    cols += '<td>'+doc.plaetze+'</td>';
-    cols += '<td>'+doc.raucherwagen+'</td>';
-    cols += '<td>'+doc.schaltung+'</td>';
-    cols += '<td>'+doc.stellplatznummer+'</td>';
-    cols += '<td>'+doc.tueren+'</td>';
-
-    //Füge die Zelleninhalte in die neue Datenreihe und füge diese in die Tabelle mit der id user_table
-    newRow.append(cols);
-    $("table.car_table").append(newRow);
-
-    counter++;
-}
