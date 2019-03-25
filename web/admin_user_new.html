@@ -62,7 +62,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#carpool" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-car"></i>
                         CarPool
@@ -117,7 +117,7 @@
             </nav>
 
             <div class="container">
-              <form class="form-horizontal" role="form" method="POST" action="admin_user_all.html">
+              <form class="form-horizontal" role="form" method="POST" action="admin_user_new.html">
                   <div class="row">
                       <div class="col-md-3"></div>
                       <div class="col-md-6">
@@ -148,13 +148,13 @@
                   </div>
                   <div class="row">
                       <div class="col-md-3 field-label-responsive">
-                          <label for="email">E-Mail Address</label>
+                          <label for="emailneu">E-Mail Address</label>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
                               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                   <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                                  <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required autofocus />
+                                  <input type="text" name="emailneu" class="form-control" id="emailneu" placeholder="you@example.com" required autofocus />
                               </div>
                           </div>
                       </div>
@@ -168,13 +168,13 @@
                   </div>
                   <div class="row">
                       <div class="col-md-3 field-label-responsive">
-                          <label for="password">Password</label>
+                          <label for="passwordneu">Password</label>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group has-danger">
                               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                   <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                                  <input type="password" name="password" class="form-control" id="password" placeholder="Password" required />
+                                  <input type="password" name="passwordneu" class="form-control" id="passwordneu" placeholder="Password" required />
                               </div>
                           </div>
                       </div>
@@ -188,7 +188,7 @@
                   </div>
                   <div class="row">
                       <div class="col-md-3 field-label-responsive">
-                          <label for="password">Confirm Password</label>
+                          <label for="passwordneu">Confirm Password</label>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
@@ -197,10 +197,29 @@
                                       <i class="fa fa-redo"></i>
                                   </div>
                                   <input type="password" name="password-confirmation" class="form-control"
-                                         id="password-confirm" placeholder="Password" required>
+                                         id="password-confirm" placeholder="password" required>
                               </div>
                           </div>
                       </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3 field-label-responsive">
+                      <label for="emailneu">Rolle</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem">
+                              <i class="fa fa-user"></i>
+                          </div>
+                          <select id="role" class="form-control">
+                            <option selected>Auswählen</option>
+                            <option>user</option>
+                            <option>admin</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="row">
                       <div class="col-md-3"></div>
@@ -239,7 +258,7 @@
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
-    <script src="js/login.js"></script>
+    <!-- <script src="js/login.js"></script> -->
     <script src="js/add_user.js"></script>
 
 

@@ -42,6 +42,8 @@ firebase.auth().onAuthStateChanged(function(user) {
           photoURL: user.photoURL,
           isAnonymous: user.isAnonymous,
           uid: user.uid});
+
+
     }
     });
 
