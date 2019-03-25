@@ -18,6 +18,7 @@ function addOrder(){
   var raucherwagen = document.getElementById("raucherwagen").value;
   var stellplatznummer = document.getElementById("stellplatznummer").value;
   var leihgrund = document.getElementById("leihgrund").value;
+  var carid = document.getElementById("carid").value;
 
 
   db.collection("order").get().then(function(querySnapshot) {
@@ -33,6 +34,8 @@ function addOrder(){
       var id = idcounter.toString();
       orderRef.add({
       rentid: idcounter,
+      carid: sessionStorage.carid,
+      uid: sessionStorage.uid,
       vorname: vorname,
       name: name,
       abholdatum: abholdatum,

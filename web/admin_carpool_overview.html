@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>EasyDriving</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -116,7 +117,7 @@
 
             <div class="container">
 
-            <table id="table"
+            <table id="car_table" class="car_table"
                  data-toggle="table"
                  data-search="true"
                  data-filter-control="true"
@@ -128,31 +129,10 @@
           			<th data-field="id" data-filter-control="input" data-sortable="true">ID</th>
           			<th data-field="marke" data-filter-control="select" data-sortable="true">Marke</th>
           			<th data-field="modell" data-filter-control="select" data-sortable="true">Modell</th>
-                <th data-field="kraftstoff" data-filter-control="select" data-sortable="true">Kraftstoff</th>
-          			<th data-field="schaltung" data-filter-control="select" data-sortable="true">Schaltung</th>
-                <th data-field="tueren" data-filter-control="select" data-sortable="true">Türen</th>
-                <th data-field="klima" data-filter-control="select" data-sortable="true">Klima</th>
-                <th data-field="navi" data-filter-control="select" data-sortable="true">Navigationsgerät</th>
-                <th data-field="raucherwagen" data-filter-control="select" data-sortable="true">Raucherwagen</th>
-                <th data-field="stellplatznummer" data-filter-control="select" data-sortable="true">Stellplatznummer</th>
+          			<th data-field="kraftstoff" data-filter-control="select" data-sortable="true">Kraftstoff</th>
+                <th data-field="details" data-filter-control="select" data-sortable="true">Details</th>
           		</tr>
           	</thead>
-          	<tbody>
-          		<tr id="body">
-          			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-             </tbody>
             </table>
 
                 <div id="table_icon" style="cursor: pointer;">
@@ -193,6 +173,8 @@
     <script src="js/firebaseinit.js"></script>
     <script src="js/login.js"></script>
 
+    <!-- Mit der Verlinkung auf die js kann die Autoübersicht aus der DB geholt werden -->
+    <script src="js/write_carpool_table.js"></script>
 
 </body>
 

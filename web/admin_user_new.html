@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>EasyDriving CarPool</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -62,7 +63,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#carpool" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-car"></i>
                         CarPool
@@ -117,7 +118,7 @@
             </nav>
 
             <div class="container">
-              <form class="form-horizontal" role="form" method="POST" action="admin_user_all.html">
+              <form class="form-horizontal" role="form" method="POST" action="admin_user_new.html">
                   <div class="row">
                       <div class="col-md-3"></div>
                       <div class="col-md-6">
@@ -138,59 +139,36 @@
                               </div>
                           </div>
                       </div>
-                      <div class="col-md-3">
-                          <div class="form-control-feedback">
-                                  <span class="text-danger align-middle">
-                                      <!-- Put name validation error messages here -->
-                                  </span>
-                          </div>
-                      </div>
                   </div>
                   <div class="row">
                       <div class="col-md-3 field-label-responsive">
-                          <label for="email">E-Mail Address</label>
+                          <label for="emailneu">E-Mail Address</label>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
                               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                   <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                                  <input type="text" name="email" class="form-control" id="email"
-                                         placeholder="you@example.com" required autofocus>
+                                  <input type="text" name="emailneu" class="form-control" id="emailneu" placeholder="you@example.com" required autofocus />
                               </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-control-feedback">
-                                  <span class="text-danger align-middle">
-                                      <!-- Put e-mail validation error messages here -->
-                                  </span>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-3 field-label-responsive">
-                          <label for="password">Password</label>
+                          <label for="passwordneu">Password</label>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group has-danger">
                               <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                   <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
-                                  <input type="password" name="password" class="form-control" id="password"
-                                         placeholder="Password" required>
+                                  <input type="password" name="passwordneu" class="form-control" id="passwordneu" placeholder="Password" required />
                               </div>
-                          </div>
-                      </div>
-                      <div class="col-md-3">
-                          <div class="form-control-feedback">
-                                  <span class="text-danger align-middle">
-                                      <i class="fas fa-times"></i> Example Error Message</i>
-                                  </span>
                           </div>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-3 field-label-responsive">
-                          <label for="password">Confirm Password</label>
+                          <label for="passwordneu">Confirm Password</label>
                       </div>
                       <div class="col-md-6">
                           <div class="form-group">
@@ -198,16 +176,36 @@
                                   <div class="input-group-addon" style="width: 2.6rem">
                                       <i class="fa fa-redo"></i>
                                   </div>
-                                  <input type="password" name="password-confirmation" class="form-control"
-                                         id="password-confirm" placeholder="Password" required>
+                                  <input type="password" name="passwordneu-confirmation" class="form-control"
+                                         id="passwordneu-confirm" placeholder="Password" required>
                               </div>
                           </div>
                       </div>
                   </div>
                   <div class="row">
+                    <div class="col-md-3 field-label-responsive">
+                      <label for="role">Rolle</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem">
+                              <i class="fa fa-user"></i>
+                          </div>
+                          <select id="role" class="form-control">
+                            <option selected>Auswählen</option>
+                            <option>user</option>
+                            <option>admin</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
                       <div class="col-md-3"></div>
                       <div class="col-md-6">
-                          <button type="submit" class="btn btn-success" onclick="addUser()"><i class="fa fa-user-plus"></i> Register</button>
+
+                          <input class="btn btn-dark btn-lg btn-primary btn-block" type="button"  onclick="addUser()" value="Register" />
                       </div>
                   </div>
               </form>
@@ -240,7 +238,8 @@
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/add_user.js"></script>
+
 
 
 </body>

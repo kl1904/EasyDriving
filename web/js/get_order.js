@@ -24,17 +24,10 @@ function addOrderTableRow(doc) {
     var newRow = $("<tr>");
     var cols = "";
 
-
     cols += '<td>'+doc.marke+'</td>';
     cols += '<td>'+doc.modell+'</td>';
     cols += '<td>'+doc.kraftstoff+'</td>';
-    cols += '<td>'+doc.schaltung+'</td>';
-    cols += '<td>'+doc.tueren+'</td>';
-    cols += '<td>'+doc.klima+'</td>';
-    cols += '<td>'+doc.navigationsgeraet+'</td>';
-    cols += '<td>'+doc.plaetze+'</td>';
-    cols += '<td>'+doc.raucherwagen+'</td>';
-    cols += '<td>'+doc.stellplatznummer+'</td>';
+    cols += '<td>'+'<a href="#autodetails">'+'Details'+'</a>'+'</td>';
 
     //Füge die Zelleninhalte in die neue Datenreihe und füge diese in die Tabelle mit der id user_table
     newRow.append(cols);
