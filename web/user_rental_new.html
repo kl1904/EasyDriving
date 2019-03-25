@@ -24,14 +24,6 @@
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/all.css">
 
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
-
-
-    <script src="js/firebaseinit.js"></script>
-    <script src="js/add_order.js"></script>
-    <script src="js/get_order.js"></script>
-    <script src="js/get_car.js"></script>
-
 
     </head>
 
@@ -144,7 +136,7 @@
                         <input id="rueckgabedatum" width="300" value="Rückgabedatum: " />
                       </div>
                     </div>
-                  </div>
+
                   </div>
                   <hr>
                   <div class="container">
@@ -161,12 +153,16 @@
                          data-toolbar="#toolbar">
                     <thead>
                       <tr>
-                        <th data-field="state" data-checkbox="true"></th>
-                        <th data-field="carid">CarID</th>
                   			<th data-field="marke">Marke</th>
                   			<th data-field="modell">Modell</th>
                         <th data-field="kraftstoff">Kraftstoff</th>
-                        <th data-field="details" data-sortable="true">Details</th>
+                  			<th data-field="schaltung">Schaltung</th>
+                        <th data-field="tueren">Türen</th>
+                        <th data-field="klima">Klima</th>
+                        <th data-field="navigationsgeraet">Navigationsgerät</th>
+                        <th data-field="plaetze">Plätze</th>
+                        <th data-field="raucherwagen">Raucherwagen</th>
+                        <th data-field="stellplatznummer">Stellplatznummer</th>
                   		</tr>
                   	</thead>
                     	<tbody id="order_table_body">
@@ -286,13 +282,21 @@
     <script src='http://rawgit.com/hhurz/tableExport.jquery.plugin/master/tableExport.js'></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/filter-control/bootstrap-table-filter-control.js'></script>
 
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+
     <!-- Awesome Font JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 
 
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
+    <script src="js/firebaseinit.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/get_order.js"></script>
+    <script src="js/add_order.js"></script>
+    <script src="js/get_car.js"></script>
+
 
 
 </body>

@@ -20,11 +20,16 @@ db.collection("cars").get().then(function(querySnapshot) {
 
         cols += '<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
         cols += '<td>'+doc.data().carid+'</td>';
+        cols += '<td>'+doc.data().klima+'</td>';
+        cols += '<td>'+doc.data().kraftstoff+'</td>';
         cols += '<td>'+doc.data().marke+'</td>';
         cols += '<td>'+doc.data().modell+'</td>';
-        cols += '<td>'+doc.data().kraftstoff+'</td>';
-        cols += '<td>'+'<a href="#autodetails">'+'Details'+'</a>'+'</td>';
-
+        cols += '<td>'+doc.data().navigationsgeraet+'</td>';
+        cols += '<td>'+doc.data().plaetze+'</td>';
+        cols += '<td>'+doc.data().raucherwagen+'</td>';
+        cols += '<td>'+doc.data().schaltung+'</td>';
+        cols += '<td>'+doc.data().stellplatznummer+'</td>';
+        cols += '<td>'+doc.data().tueren+'</td>';
 
         //Füge die Zelleninhalte in die neue Datenreihe und füge diese in die Tabelle mit der id user_table
         newRow.append(cols);

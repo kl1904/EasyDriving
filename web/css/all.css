@@ -19,7 +19,7 @@
     DEMO STYLE
 */
 
-
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -41,10 +41,6 @@ a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
-}
-table a:hover {
-    color: blue;
-    font-weight: bold;
 }
 
 .navbar {

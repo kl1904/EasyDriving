@@ -23,12 +23,18 @@ function addOrderTableRow(doc) {
     //Variablen newRow -> neue Datenreihe ; cols -> Zellenininhalte
     var newRow = $("<tr>");
     var cols = "";
-    cols += '<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>';
-    cols += '<td>'+doc.carid+'</td>';
+
+    
     cols += '<td>'+doc.marke+'</td>';
     cols += '<td>'+doc.modell+'</td>';
     cols += '<td>'+doc.kraftstoff+'</td>';
-    cols += '<td>'+'<a href="#autodetails">'+'Details'+'</a>'+'</td>';
+    cols += '<td>'+doc.schaltung+'</td>';
+    cols += '<td>'+doc.tueren+'</td>';
+    cols += '<td>'+doc.klima+'</td>';
+    cols += '<td>'+doc.navigationsgeraet+'</td>';
+    cols += '<td>'+doc.plaetze+'</td>';
+    cols += '<td>'+doc.raucherwagen+'</td>';
+    cols += '<td>'+doc.stellplatznummer+'</td>';
 
     //Füge die Zelleninhalte in die neue Datenreihe und füge diese in die Tabelle mit der id user_table
     newRow.append(cols);
