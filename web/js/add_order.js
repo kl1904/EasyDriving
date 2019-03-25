@@ -13,7 +13,7 @@ function addOrder(){
   var schaltung = document.getElementById("schaltung").value;
   var tueren = document.getElementById("tueren").value;
   var klima = document.getElementById("klima").value;
-  var navigationsgeraet = document.getElementsByName("navigationsgeraet").value;
+  var navigationsgeraet = document.getElementById("navigationsgeraet").value;
   var plaetze = document.getElementById("plaetze").value;
   var raucherwagen = document.getElementById("raucherwagen").value;
   var stellplatznummer = document.getElementById("stellplatznummer").value;
