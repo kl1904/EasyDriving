@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <link rel="shortcut icon" href="img/favicon.png">
     <title>EasyDriving</title>
 
     <!-- Bootstrap CSS -->
@@ -117,7 +115,7 @@
 
             <div class="container">
 
-            <table id="table"
+            <table id="car_table" class="car_table"
                  data-toggle="table"
                  data-search="true"
                  data-filter-control="true"
@@ -138,22 +136,6 @@
                 <th data-field="stellplatznummer" data-filter-control="select" data-sortable="true">Stellplatznummer</th>
           		</tr>
           	</thead>
-          	<tbody>
-          		<tr id="body">
-          			<td class="bs-checkbox "><input data-index="0" name="btSelectItem" type="checkbox"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-             </tbody>
             </table>
 
                 <div id="table_icon" style="cursor: pointer;">
@@ -193,10 +175,9 @@
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
     <script src="js/login.js"></script>
-    
+
     <!-- Mit der Verlinkung auf die js kann die Autoübersicht aus der DB geholt werden -->
     <script src="js/write_carpool_table.js"></script>
-
 
 </body>
 
