@@ -1,4 +1,4 @@
-
+//
 var db = firebase.firestore();
 //Wenn der DB-Eintrag users existiert
 db.collection("cars").get().then(function(querySnapshot) {
@@ -24,7 +24,7 @@ function addOrderTableRow(doc) {
     var newRow = $("<tr>");
     var cols = "";
 
-    
+
     cols += '<td>'+doc.marke+'</td>';
     cols += '<td>'+doc.modell+'</td>';
     cols += '<td>'+doc.kraftstoff+'</td>';

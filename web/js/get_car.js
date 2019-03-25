@@ -1,3 +1,4 @@
+//
 var db = firebase.firestore();
 
 const markeList = document.querySelector('#marke');
