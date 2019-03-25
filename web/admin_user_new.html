@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>EasyDriving CarPool</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -62,7 +63,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#carpool" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-car"></i>
                         CarPool
@@ -117,7 +118,7 @@
             </nav>
 
             <div class="container">
-              <form class="form-horizontal" role="form" method="POST" action="admin_user_all.html">
+              <form class="form-horizontal" role="form" method="POST" action="admin_user_new.html">
                   <div class="row">
                       <div class="col-md-3"></div>
                       <div class="col-md-6">
@@ -189,17 +190,23 @@
                       </div>
                   </div>
                   <div class="row">
-                      <div class="col-md-3 field-label-responsive">
-                          <label for="role">Rolle</label>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="form-group has-danger">
-                              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                                  <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-user-tag"></i></div>
-                                  <input type="text" name="role" class="form-control" id="role" placeholder="admin/user" required />
-                              </div>
+                    <div class="col-md-3 field-label-responsive">
+                      <label for="role">Rolle</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem">
+                              <i class="fa fa-user"></i>
                           </div>
+                          <select id="role" class="form-control">
+                            <option selected>Auswählen</option>
+                            <option>user</option>
+                            <option>admin</option>
+                          </select>
+                        </div>
                       </div>
+                    </div>
                   </div>
                   <div class="row">
                       <div class="col-md-3"></div>
@@ -238,7 +245,6 @@
     <!-- Our Custom JS -->
     <script src="js/scripts.js"></script>
     <script src="js/firebaseinit.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/add_user.js"></script>
 
 
